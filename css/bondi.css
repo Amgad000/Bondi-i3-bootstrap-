@@ -1,0 +1,222 @@
+:root {
+		--dark-color: #19283f;
+		--green-color: #33d1cc;
+		--red-color: #ff3150;
+		--yellow-color: #ffc400;
+		--section-color: #eff7fa;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+::-webkit-scrollbar {
+	width: 1rem;
+}
+::-webkit-scrollbar-track {
+	background-color: var(--green-color);
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--yellow-color);
+}
+
+/* repeated items */
+.main-btn {
+	color: var(--yellow-color);
+	background-color: var(--red-color);
+}
+.main-btn:hover {
+	color: var(--yellow-color);
+	background-color: var(--red-color);
+	outline: 2px solid var(--yellow-color);
+}
+.main-title::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 160px;
+	height: 2px;
+	background-color: var(--green-color);
+}
+/* End reapeated items  */
+/* nav styling  */
+.navbar {
+	background-color: var(--dark-color);
+}
+.navbar .navbar-toggler {
+	color: white;
+	border: 1px solid white;
+}
+.navbar .navbar-toggler:focus {
+	box-shadow: none;
+	border-color: var(--green-color);
+}
+.navbar .navbar-nav .nav-link {
+	color: white;
+	cursor: pointer;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:hover {
+	color: var(--green-color);
+}
+.navbar .search {
+	border-left: 1px solid var(--green-color);
+}
+.navbar .search svg {
+	color: var(--green-color);
+}
+
+/* End nav styling  */
+/* Landing  */
+.landing {
+	background-color: var(--dark-color);
+	min-height: 80vh;
+}
+/* End Landing  */
+/* Start features  */
+.feats {
+	counter-reset: feats;
+}
+.feats .icons {
+	height: 200px;
+}
+.feats .icons::after {
+	counter-increment: feats;
+	content: counter(feats);
+	position: absolute;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 12rem;
+	color: var(--section-color);
+
+}
+.feats .icons .icon {
+	position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--green-color);
+    font-size: 4rem;
+    z-index: 1;
+}
+.feats .info h3 {
+	color: var(--yellow-color);
+}
+/* End features  */
+/* start works section  */
+.works {
+	background-color: var(--section-color);
+}
+.works ul li {
+	cursor: pointer;
+}
+.works ul li.active {
+	background-color: var(--red-color);
+	color: var(--yellow-color);
+}
+.works ul li:not(.active):hover {
+	color: var(--red-color);
+}
+.works div.image::after {
+	content: attr(data-work);
+	position: absolute;
+	position: absolute;
+    top: .25rem;
+    left: -100%;
+    height: calc(100% - .5rem);
+    width: calc(100% - .5rem);
+    background-color: rgb(51 209 204 / 60%);
+	transition: .3s;
+	color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+	text-transform: capitalize;
+}
+.works div.image:hover::after {
+	left: .25rem;
+}
+
+/* End works section  */
+
+/* About section  */
+.about .container > p {
+	max-width: 450px;
+}
+@media (max-width:991px) {
+	.about .container a {
+		width: fit-content;
+		display: block;
+		margin: auto;
+	}
+}
+/* End About section  */
+/* the team  */
+.team {
+	background-color: var(--section-color);
+}
+.team h2 {
+	color: var(--yellow-color);
+}
+.team .container > p {
+	max-width: 700px;
+}
+.team .card h4 {
+	background-color: var(--green-color);
+}
+/* End the team  */
+/* the project section  */
+.project .order {
+	background-color: var(--dark-color);
+}
+/* the footer section  */
+.contact {
+	background-color: var(--yellow-color)
+}
+.contact input[type="mail"] {
+	border: none;
+	border-bottom: 1px solid white;
+	outline: none;
+}
+.contact input[type="mail"]::placeholder {
+	color: white;
+}
+.contact .subscribe {
+	background-color: var(--dark-color);
+	color: var(--yellow-color);
+}
+/* the footer  */
+.footer {
+	background-color: var(--dark-color);
+}
+.footer .info p:nth-of-type(2) span {
+	color: var(--green-color);
+}
+.footer .info p:nth-of-type(3) span {
+	color: var(--yellow-color);
+}
+.footer .social svg {
+	width: 20px;
+	height: 20px;
+}
+.footer .social .facebook {
+	background-color: #1877f2;
+}
+.footer .social .twitter {
+	background-color: #1da1f2;
+}
+.footer .social .linkedin {
+	background-color: #0077b5;
+}
+.footer .social .youtube {
+	background-color: #ff0000;
+}
